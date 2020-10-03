@@ -14,7 +14,7 @@ public class UserService {
     private UserRepository userRepository;
 
     public User createUser(User user) {
-        return userRepository.insert(user);
+        return userRepository.save(user);
     }
 
     public User editUser(User user) {
@@ -28,5 +28,9 @@ public class UserService {
     public boolean deleteUser(String id) {
         userRepository.deleteById(id);
         return true;
+    }
+
+    public User getById(String id) {
+        return userRepository.findById(id).orElseThrow();
     }
 }

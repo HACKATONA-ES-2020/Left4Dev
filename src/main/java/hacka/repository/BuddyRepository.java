@@ -6,10 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BuddyRepository extends MongoRepository<Buddy, String> {
-
-//    Buddy insert(Buddy buddy);
-//
-//    Optional<Buddy> findById(Buddy buddy);
-//
-//    List<Buddy> findAll();
 }

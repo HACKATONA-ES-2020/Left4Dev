@@ -12,7 +12,7 @@ public class BuddyService {
     private BuddyRepository buddyRepository;
 
     public Buddy createBuddy(Buddy buddy) {
-        return buddyRepository.insert(buddy);
+        return buddyRepository.save(buddy);
     }
 
     public Buddy editBuddy(Buddy buddy) {
@@ -24,4 +24,7 @@ public class BuddyService {
         return true;
     }
 
+    public Buddy getById(String id) {
+        return buddyRepository.findById(id).orElseThrow();
+    }
 }
