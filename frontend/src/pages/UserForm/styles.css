@@ -1,100 +1,43 @@
-#page-user-form {
-  width: 100vw;
-  height: 100vh;
+.content {
+    display: flex;
+    align-items: center;
 }
 
-#page-user-form .page-header .header-content {
-  margin-bottom:6.4rem;
+.form-container {
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px);
 }
 
-#page-user-form main {
-  background: var(--color-box-base);
-  width: 100%;
-  max-width: 74rem;
-  border-radius: 0.8rem;
-  margin: -3.2rem auto 3.2rem;
-  padding-top: 6.4rem;
-  overflow: hidden;
+.informacoes-basicas {
+    width: 30%;
 }
 
-#page-user-form main fieldset {
-  border: 0;
-  padding: 0 2.4rem;
+.textarea {
+    width: 70%;
 }
 
-#page-user-form main fieldset + fieldset {
-  margin-top: 6.4rem;
+.field {
+    width: 300px;
+    margin: 10px!important;
 }
 
-#page-user-form main fieldset legend {
-  font: 700 2.4rem Archivo;
-  color: var(--color-text-title);
-  margin-bottom: 2.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding-bottom: 1.6rem;
-  border-bottom: 1px solid var(--color-line-in-white);
+.carta-apresentacao {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
 }
 
-#page-user-form main fieldset legend button {
-  background: none;
-  border: 0;
-  color: var(--color-primary);
-  font: 700 1.6rem Archivo;
-  cursor: pointer;
-  transition: color 0.2s;
+.title {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 30px;
 }
-
-#page-user-form main fieldset .input-block + .textarea-block,
-#page-user-form main fieldset .select-block + .input-block {
-  margin-top: 2.4rem;
-}
-
-#page-user-form label {
-  color: var(--color-text-complement);
-}
-
-#page-user-form main footer {
-  padding: 4rem 2.4rem;
-  background: var(--color-box-footer);
-  border-top: 1px solid var(--color-line-in-white);
-  margin-top: 6.4rem;
-}
-
-#page-user-form main footer p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  line-height: 2.4rem;
-  color: var(--color-text-complement);
-}
-
-#page-user-form main footer p img {
-  margin-right: 2rem;
-}
-
-#page-user-form main footer button {
-  width: 100%;
-  height: 5.6rem;
-  background: var(--color-secundary);
-  color: var(--color-button-text);
-  border: 0;
-  border-radius: 0.8rem;
-  cursor: pointer;
-  font: 700 1.6rem Archivo;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: background-color 0.2s;
-  margin-top: 3.2rem;
-}
-
-#page-user-form main footer button:hover {
-  background: var(--color-secundary-dark);
-}
-
-
+/* .MuiCardContent-root {
+    display: flex;
+    align-items: center!important;
+    justify-content: center;
+    height: 100%;
+} */

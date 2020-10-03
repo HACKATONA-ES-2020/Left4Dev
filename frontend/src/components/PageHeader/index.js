@@ -1,21 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../../assets/img/logo.png';
 
 import './styles.css';
 
 const PageHeader = () => {
   return (
-    <header className="page-header">
-      <div className="top-bar-container">
+    <header>
+      <div className="header">
         <Link to="/">
-         <span>Voltar</span>
+          <span>Voltar</span>
         </Link>
-        <img src="#" alt="Buddy" />
-      </div>
-
-      <div className="header-content">
-        <strong>BUDDY</strong>
-        Apoio em todos os lugares
+        <img className="logo" src={Logo} alt="Buddy" />
+        
       </div>
     </header>
   );
