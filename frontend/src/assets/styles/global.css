@@ -2,6 +2,13 @@
   font-size: 85%;
 
   background-image: url(../../assets/img/friends.jpg);
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   --color-primary-light: #FFD700;
   --color-primary-dark: #FFC600;
   --color-secundary: #E0E0E0;
