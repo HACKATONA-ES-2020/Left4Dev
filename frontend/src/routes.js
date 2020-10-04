@@ -4,6 +4,7 @@ import BuddyForm from './pages/BuddyForm';
 import UserForm from './pages/UserForm';
 import Login from './pages/Login';
 import SelectPerfil from './pages/SelectPerfil';
+import BuddiesApproval from './pages/BuddiesApproval';
 
 function Routes() {
   return (
@@ -12,6 +13,7 @@ function Routes() {
       <Route path="/login" exact component={Login}/>
       <Route path="/buddy" component={BuddyForm}/>
       <Route path="/user" component={UserForm}/>
+      <Route path="/admin" component={BuddiesApproval} />
     </BrowserRouter>
   )
 }

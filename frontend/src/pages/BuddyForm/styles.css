@@ -4,10 +4,6 @@
     flex-direction: column;
 }
 
-/* .content label {
-    font-size: 18px;
-} */
-
 .form-containerB {
     display: flex!important;
     justify-content: center;

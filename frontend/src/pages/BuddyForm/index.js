@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import { TextField} from '@material-ui/core';
+import { TextField } from '@material-ui/core';
 
 import PageHeader from '../../components/PageHeader';
 import Background from '../../components/Background';
@@ -14,7 +14,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import './stylesBuddy.css';
+import './styles.css';
 
 function BuddyForm() {
   const [values, setValues] = React.useState({

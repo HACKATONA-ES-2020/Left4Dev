@@ -38,7 +38,7 @@ function Login() {
 
   return (
     <React.Fragment>
-      <div className="form-container">
+      <div className="container-login">
         <Background>
           <div className="content-logo">
             <img src={Logo} alt="Buddy" />
