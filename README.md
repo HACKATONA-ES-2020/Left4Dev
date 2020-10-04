@@ -1,2 +1,0 @@
-# Left4Dev
-teste
