@@ -3,6 +3,7 @@ import React from 'react';
 import Background from '../../components/Background';
 import ButtonDefault from '../../components/ButtonDefult';
 import Logo from '../../assets/img/logo.png';
+import api from '../../services/api';
 
 import { TextField, IconButton, OutlinedInput, InputLabel, InputAdornment, FormControl} from '@material-ui/core';
 
@@ -30,11 +31,29 @@ function Login() {
     event.preventDefault();
   };
 
-  const login = () => {
+  const login = async() => {
     console.log("CHAMA API PRA LOGIN");
+
+    
+    const headers = {
+      headers: {
+          authorization: 'Authorization'
+      }
+    }
+    const params = {
+      name: values.username,
+      password: values.password
+    }
+    
+    const response = await api.get('http://localhost:8080/user/login', { params }, headers.authorization)
+    .catch( error => {
+      console.log(error.response.data.message)
+    });
+    if (response && response.status === 200) {
+      alert("Login realizado com sucesso!")
+      window.location.href = "/";
+    }
   }
-
-
 
   return (
     <React.Fragment>

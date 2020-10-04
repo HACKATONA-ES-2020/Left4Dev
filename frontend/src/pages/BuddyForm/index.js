@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import { TextField } from '@material-ui/core';
+import { TextField, Typography } from '@material-ui/core';
 
 import PageHeader from '../../components/PageHeader';
 import Background from '../../components/Background';
@@ -15,6 +15,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import './styles.css';
+import { Link } from 'react-router-dom';
 import api from '../../services/api'
 
 function BuddyForm() {
@@ -82,7 +83,7 @@ function BuddyForm() {
         <Background>
           <main>
             <div className="titleB">
-              <span>INFORMAÇÕES PARA CADASTRO</span>
+              <Typography variant="h3" color="primary">QUER SER UM BUDDY? ENTÃO INSIRA SEUS DADOS!</Typography>
             </div>
             <form className="contentB" noValidate autoComplete="off">
               <div className="informacoes-basicasB">
@@ -124,10 +125,11 @@ function BuddyForm() {
               <Button variant="contained" size="medium" className="buttonB" onClick={cadastrar}>
                 CADASTRAR
               </Button>
-            </div>
-            <div className="form-linkB">
-              <p>Já possui conta?</p>
-              <a href="/buddy">Entrar</a>
+              <span className="text">Já possui conta?
+                <Link to="/select-perfil">
+                  <span>Entrar</span>
+                </Link>
+              </span>
             </div>
           </main>
         </Background>

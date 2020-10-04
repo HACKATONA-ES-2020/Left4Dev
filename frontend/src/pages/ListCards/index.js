@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PageHeader from '../../components/PageHeader';
 import Button from '@material-ui/core/Button';
-import api from '../../services/api'
+import api from '../../services/api';
 
 import './styles.css';
 
