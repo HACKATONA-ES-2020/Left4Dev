@@ -1,0 +1,17 @@
+.inicial-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh);
+    background-image: url(../../assets/img/cartoon.jpg);
+}
+
+.buttons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.description {
+    margin-top: 50px;
+}

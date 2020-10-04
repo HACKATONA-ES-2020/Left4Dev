@@ -4,13 +4,12 @@ import Background from '../../components/Background';
 import ButtonDefault from '../../components/ButtonDefult';
 import Logo from '../../assets/img/logo.png';
 
-import { Link } from 'react-router-dom';
-
 import { TextField, IconButton, OutlinedInput, InputLabel, InputAdornment, FormControl} from '@material-ui/core';
 
 import { Visibility, VisibilityOff } from '@material-ui/icons';
 
 import './styles.css';
+
 
 function Login() {
   const [values, setValues] = React.useState({
@@ -34,6 +33,8 @@ function Login() {
   const login = () => {
     console.log("CHAMA API PRA LOGIN");
   }
+
+
 
   return (
     <React.Fragment>
@@ -75,11 +76,6 @@ function Login() {
 
             <ButtonDefault value="Entrar" size="medium" onCLick={login} />
             
-            <span className="text">Não possui login?
-              <Link to="/select-perfil">
-                <span>Deseja se cadastrar?</span>
-              </Link>
-            </span>
           </div>
         </Background>
       </div>
