@@ -28,7 +28,7 @@ function UserForm() {
     whatsapp: '',
     scale: ''
   });
-
+  
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleChange = (prop) => (event) => {
@@ -60,7 +60,7 @@ function UserForm() {
     });
     if (response && response.status === 200) {
       alert("Registro salvo com sucesso!")
-      
+      window.location.href = "/";
     }
   }
 
@@ -109,10 +109,10 @@ function UserForm() {
                   <div className="emoji" id="sad" onClick={() => handleClickChangeEmotion(1)}>
                     <SentimentDissatisfiedSharpIcon fontSize="large" />
                   </div>
-                  <div className="emoji" id="sad" onClick={() => handleClickChangeEmotion(2)}>
+                  <div className="emoji" id="normal" onClick={() => handleClickChangeEmotion(2)}>
                     <SentimentDissatisfiedIcon id="neutral" fontSize="large" />
                   </div>
-                  <div className="emoji" id="sad" onClick={() => handleClickChangeEmotion(3)}>
+                  <div className="emoji" id="happy" onClick={() => handleClickChangeEmotion(3)}>
                     <SentimentSatisfiedSharpIcon id="smile" fontSize="large" />
                   </div>
                 </FormControl>
