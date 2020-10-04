@@ -14,7 +14,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import './stylesBuddy.css';
+import './styles.css';
 
 function BuddyForm() {
   const [values, setValues] = React.useState({

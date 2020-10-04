@@ -16,7 +16,7 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import SentimentDissatisfiedSharpIcon from '@material-ui/icons/SentimentDissatisfiedSharp';
 import SentimentSatisfiedSharpIcon from '@material-ui/icons/SentimentSatisfiedSharp';
 import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
-import './stylesUser.css';
+import './styles.css';
 
 function UserForm() {
   const [values, setValues] = React.useState({
@@ -86,9 +86,9 @@ function UserForm() {
                 </FormControl>
                 <InputLabel className="field">Escala emocional</InputLabel>
                 <FormControl className="icons">
-                  {/* <SentimentDissatisfiedSharpIcon id="sad" className="field" fontSize="large" value={handleChange('emotion')}/> */}
-                  {/* <SentimentDissatisfiedIcon id="neutral" className="field" fontSize="large" value={handleChange('emotion')}/> */}
-                  {/* <SentimentSatisfiedSharpIcon id="smile" className="field" fontSize="large" value={handleChange('emotion')}/> */}
+                  <SentimentDissatisfiedSharpIcon id="sad" className="field" fontSize="large" value={handleChange('emotion')}/>
+                  <SentimentDissatisfiedIcon id="neutral" className="field" fontSize="large" value={handleChange('emotion')}/>
+                  <SentimentSatisfiedSharpIcon id="smile" className="field" fontSize="large" value={handleChange('emotion')}/>
                 </FormControl>
                 <TextField
                   id="phone-number"
