@@ -26,10 +26,10 @@ public class RoomController {
             @RequestParam String idUser,
             @RequestParam String idBuddy
     ) {
-        return roomService.createRoom(userService.getById(idBuddy), buddyService.getById(idBuddy));
+        return roomService.createRoom(userService.getById(idUser), buddyService.getById(idBuddy));
     }
 
-    @PostMapping
+    @PostMapping("/message")
     public String sendMessage(
             @RequestParam String message,
             @RequestBody Room room

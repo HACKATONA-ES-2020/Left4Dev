@@ -3,10 +3,9 @@ package hacka.controller;
 import hacka.domain.Buddy;
 import hacka.service.BuddyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping("/buddy")
 public class BuddyController {
 
