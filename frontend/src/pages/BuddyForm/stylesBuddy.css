@@ -1,0 +1,53 @@
+.contentB {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* .content label {
+    font-size: 18px;
+} */
+
+.form-containerB {
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px);
+}
+
+.informacoes-basicasB {
+    width: 30%;
+}
+
+.fieldB {
+    width: 300px;
+    margin: 10px!important;
+}
+
+.titleB {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-buttonB {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.buttonB {
+    width: 100px;
+    background-color: #FFC600 !important;
+}
+
+.form-linkB {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.form-linkB a {
+    font-weight: bold;
+    color: #FFC600;
+}
