@@ -9,10 +9,10 @@ import BuddiesApproval from './pages/BuddiesApproval';
 function Routes() {
   return (
     <BrowserRouter>
-      <Route path="/" exact component={Login} />
-      <Route path="/select-perfil" component={SelectPerfil} />
-      <Route path="/buddy" component={BuddyForm} />
-      <Route path="/user" component={UserForm} />
+      <Route path="/" exact component={SelectPerfil}/>
+      <Route path="/login" exact component={Login}/>
+      <Route path="/buddy" component={BuddyForm}/>
+      <Route path="/user" component={UserForm}/>
       <Route path="/admin" component={BuddiesApproval} />
     </BrowserRouter>
   )
