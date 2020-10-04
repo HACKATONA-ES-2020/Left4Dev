@@ -1,14 +1,26 @@
 .header {
     display: flex;
     justify-content: space-between;
+    padding: 15px 40px 10px 40px;
+    height: 70px;
+    box-sizing: border-box;
+    /* display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 42px;
     padding: 10px;
     margin: 10px;
-    box-sizing: border-box;
+    box-sizing: border-box; */
 }
 
 .logo {
-    width: 150px;
-    height: 40px;
+    
+}
+
+.arrow-back {
+    cursor: pointer;
+}
+
+.MuiSvgIcon-root {
+    color:  #FFC600 !important;
 }

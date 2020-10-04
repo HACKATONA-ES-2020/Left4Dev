@@ -5,6 +5,7 @@ import { TextField } from '@material-ui/core';
 import PageHeader from '../../components/PageHeader';
 import Background from '../../components/Background';
 
+import { Link } from 'react-router-dom';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
@@ -16,14 +17,10 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import SentimentDissatisfiedSharpIcon from '@material-ui/icons/SentimentDissatisfiedSharp';
 import SentimentSatisfiedSharpIcon from '@material-ui/icons/SentimentSatisfiedSharp';
 import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
-import './stylesUser.css';
+import './styles.css';
 
 function UserForm() {
   const [values, setValues] = React.useState({
-    amount: '',
-    password: '',
-    weight: '',
-    weightRange: '',
     showPassword: false,
     username: '',
     phone: '',
@@ -36,6 +33,10 @@ function UserForm() {
     setValues({ ...values, [prop]: event.target.value });
   };
 
+  const handleClickChangeEmotion = (emotion) => {
+    setValues({ emotion });
+  }
+
   const handleClickShowPassword = () => {
     setValues({ ...values, showPassword: !values.showPassword });
   };
@@ -43,6 +44,10 @@ function UserForm() {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+
+  const cadastrar = () => {
+    console.log(values)
+  }
 
   return (
     <React.Fragment>
@@ -86,9 +91,15 @@ function UserForm() {
                 </FormControl>
                 <InputLabel className="field">Escala emocional</InputLabel>
                 <FormControl className="icons">
-                  {/* <SentimentDissatisfiedSharpIcon id="sad" className="field" fontSize="large" value={handleChange('emotion')}/> */}
-                  {/* <SentimentDissatisfiedIcon id="neutral" className="field" fontSize="large" value={handleChange('emotion')}/> */}
-                  {/* <SentimentSatisfiedSharpIcon id="smile" className="field" fontSize="large" value={handleChange('emotion')}/> */}
+                  <div className="emoji" id="sad" onClick={() => handleClickChangeEmotion(1)}>
+                    <SentimentDissatisfiedSharpIcon fontSize="large" />
+                  </div>
+                  <div className="emoji" id="sad" onClick={() => handleClickChangeEmotion(2)}>
+                    <SentimentDissatisfiedIcon id="neutral" fontSize="large" />
+                  </div>
+                  <div className="emoji" id="sad" onClick={() => handleClickChangeEmotion(3)}>
+                    <SentimentSatisfiedSharpIcon id="smile" fontSize="large" />
+                  </div>
                 </FormControl>
                 <TextField
                   id="phone-number"
@@ -112,19 +123,20 @@ function UserForm() {
                   multiline
                   variant="outlined"
                   className="textarea"
-                  rows={20}
+                  rows={10}
                   onChange={handleChange('presentation')}
                 />
               </div>
             </form>
             <div className="form-button">
-              <Button variant="contained" size="medium" className="button">
+              <Button variant="contained" size="medium" className="button" onClick={cadastrar}>
                 CADASTRAR
               </Button>
-            </div>
-            <div className="form-link">
-                <p>Já possui conta?</p>
-                <a href="/user">Entrar</a>
+              <span className="text">Já possui conta?
+                <Link to="/select-perfil">
+                  <span>Entrar</span>
+                </Link>
+              </span>
             </div>
           </main>
         </Background>
