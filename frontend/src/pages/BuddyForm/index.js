@@ -15,6 +15,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import './styles.css';
+import api from '../../services/api'
 
 function BuddyForm() {
   const [values, setValues] = React.useState({
@@ -22,9 +23,10 @@ function BuddyForm() {
     password: '',
     weight: '',
     weightRange: '',
-    showPassword: false,
     userName: ''
   });
+
+  const [showPassword, setShowPassword] = React.useState(false);
 
   const [selectedFile, setSelectedFile] = React.useState(null);
 
@@ -33,7 +35,7 @@ function BuddyForm() {
   };
 
   const handleClickShowPassword = () => {
-    setValues({ ...values, showPassword: !values.showPassword });
+    setShowPassword(!showPassword);
   };
 
   const handleMouseDownPassword = (event) => {  
@@ -55,6 +57,23 @@ function BuddyForm() {
      
     axios.post("api/uploadfile", formData); 
   }; 
+
+  const cadastrar = async () => {
+    const headers = {
+      headers: {
+          authorization: 'Authorization'
+      }
+    }
+    const response = await api.post('http://localhost:8080/buddy', values,
+    headers.authorization)
+    .catch( error => {
+      console.log(error.response.data.message)
+    });
+    if (response && response.status === 200) {
+      alert("Registro salvo com sucesso!")
+      window.location.href = "/list-cards";
+    }
+  }
 
   return (
     <React.Fragment>
@@ -102,7 +121,7 @@ function BuddyForm() {
               </div> 
             </form>
             <div className="form-buttonB">
-              <Button variant="contained" size="medium" className="buttonB" onClick={onFileUpload}>
+              <Button variant="contained" size="medium" className="buttonB" onClick={cadastrar}>
                 CADASTRAR
               </Button>
             </div>

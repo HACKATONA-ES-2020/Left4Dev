@@ -22,7 +22,6 @@ import api from '../../services/api'
 
 function UserForm() {
   const [values, setValues] = React.useState({
-    showPassword: false,
     name: '',
     password: '',
     letter: '',
@@ -30,8 +29,9 @@ function UserForm() {
     scale: ''
   });
 
+  const [showPassword, setShowPassword] = React.useState(false);
+
   const handleChange = (prop) => (event) => {
-    console.log(event.target.value)
     setValues({ ...values, [prop]: event.target.value });
   };
 
@@ -40,20 +40,28 @@ function UserForm() {
   }
 
   const handleClickShowPassword = () => {
-    setValues({ ...values, showPassword: !values.showPassword });
+    setShowPassword(!showPassword);
   };
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
-
-  const cadastrar = () => {
-    delete values.showPassword;
-    api.post('/user', values)
-    .then(function(response){
-    console.log('salvo com sucesso')
-    });  
-    console.log(values)
+  
+  const cadastrar = async () => {
+    const headers = {
+      headers: {
+          authorization: 'Authorization'
+      }
+    }
+    const response = await api.post('http://localhost:8080/user', values,
+    headers.authorization)
+    .catch( error => {
+      console.log(error.response.data.message)
+    });
+    if (response && response.status === 200) {
+      alert("Registro salvo com sucesso!")
+      
+    }
   }
 
   return (

@@ -1,7 +1,7 @@
 hacka/BuddyApplication.java
  hacka.BuddyApplication
-hacka/domain/User.java
- hacka.domain.User
+hacka/service/BuddyService.java
+ hacka.service.BuddyService
 hacka/repository/UserRepository.java
  hacka.repository.UserRepository
 hacka/repository/BuddyRepository.java
@@ -10,17 +10,19 @@ hacka/config/MongoConfig.java
  hacka.config.MongoConfig
 hacka/domain/Buddy.java
  hacka.domain.Buddy
+hacka/controller/BuddyController.java
+ hacka.controller.BuddyController
 hacka/service/RoomService.java
  hacka.service.RoomService
 hacka/controller/UserController.java
  hacka.controller.UserController
 hacka/controller/RoomController.java
  hacka.controller.RoomController
-hacka/service/BuddyService.java
- hacka.service.BuddyService
-hacka/controller/BuddyController.java
- hacka.controller.BuddyController
+hacka/domain/User.java
+ hacka.domain.User
 hacka/service/UserService.java
  hacka.service.UserService
 hacka/domain/Room.java
  hacka.domain.Room
+hacka/config/ConfigurationCors.java
+ hacka.config.ConfigurationCors
