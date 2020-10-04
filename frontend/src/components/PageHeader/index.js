@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../assets/img/logo.png';
+import Logo from '../../assets/img/logovec.png';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import './styles.css';
