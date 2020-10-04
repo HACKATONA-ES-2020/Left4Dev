@@ -1,7 +1,6 @@
 package hacka.service;
 
 import hacka.domain.Buddy;
-import hacka.domain.User;
 import hacka.repository.BuddyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
