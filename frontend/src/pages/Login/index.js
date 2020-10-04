@@ -14,6 +14,7 @@ import './styles.css';
 
 function Login() {
   const [values, setValues] = React.useState({
+    username: '',
     password: '',
     showPassword: false,
   });
@@ -47,6 +48,7 @@ function Login() {
               label="Nome de Usuário / Apelido"
               variant="outlined"
               className="field"
+              onChange={handleChange('username')}
             />
             <FormControl className="field" variant="outlined">
               <InputLabel htmlFor="password">Password</InputLabel>
@@ -74,7 +76,7 @@ function Login() {
             <ButtonDefault value="Entrar" size="medium" onCLick={login} />
             
             <span className="text">Não possui login?
-              <Link to="/chose-tyoe">
+              <Link to="/select-perfil">
                 <span>Deseja se cadastrar?</span>
               </Link>
             </span>
