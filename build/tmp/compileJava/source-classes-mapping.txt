@@ -1,7 +1,25 @@
+<<<<<<< HEAD
+=======
+hacka/BuddyApplication.java
+ hacka.BuddyApplication
+hacka/service/BuddyService.java
+ hacka.service.BuddyService
+hacka/repository/UserRepository.java
+ hacka.repository.UserRepository
+hacka/repository/BuddyRepository.java
+ hacka.repository.BuddyRepository
+>>>>>>> c424bb4e34c5eabdbcd87bcedd8bdd7379e8145d
 hacka/config/MongoConfig.java
  hacka.config.MongoConfig
 hacka/domain/Buddy.java
  hacka.domain.Buddy
+<<<<<<< HEAD
+=======
+hacka/controller/BuddyController.java
+ hacka.controller.BuddyController
+hacka/service/RoomService.java
+ hacka.service.RoomService
+>>>>>>> c424bb4e34c5eabdbcd87bcedd8bdd7379e8145d
 hacka/controller/UserController.java
  hacka.controller.UserController
 hacka/repository/BuddyRepository.java
@@ -20,7 +38,16 @@ hacka/controller/RoomController.java
  hacka.controller.RoomController
 hacka/domain/User.java
  hacka.domain.User
+<<<<<<< HEAD
 hacka/service/BuddyService.java
  hacka.service.BuddyService
 hacka/service/UserService.java
  hacka.service.UserService
+=======
+hacka/service/UserService.java
+ hacka.service.UserService
+hacka/domain/Room.java
+ hacka.domain.Room
+hacka/config/ConfigurationCors.java
+ hacka.config.ConfigurationCors
+>>>>>>> c424bb4e34c5eabdbcd87bcedd8bdd7379e8145d

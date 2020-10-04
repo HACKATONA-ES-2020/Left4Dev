@@ -2,7 +2,11 @@
 /shelf/
 /workspace.xml
 # Datasource local storage ignored files
+<<<<<<< HEAD
 /dataSources/
+=======
+/../../../../../../../../:\Users\andre.marques\Desktop\Hackatona ES\DEV\Left4Dev\.idea/dataSources/
+>>>>>>> c424bb4e34c5eabdbcd87bcedd8bdd7379e8145d
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
