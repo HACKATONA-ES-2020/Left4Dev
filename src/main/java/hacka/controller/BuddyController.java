@@ -21,7 +21,7 @@ public class BuddyController {
         return buddyService.createBuddy(buddy);
     }
 
-    @GetMapping
+    @GetMapping("/valids")
     public List<Buddy> listBuddies() {
         return buddyService.getValidatesBuddies();
     }

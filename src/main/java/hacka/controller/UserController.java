@@ -27,7 +27,7 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @GetMapping
+    @GetMapping("/login")
     public boolean login(
             @RequestParam String name,
             @RequestParam String password
