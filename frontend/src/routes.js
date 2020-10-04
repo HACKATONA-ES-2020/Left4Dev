@@ -8,8 +8,8 @@ import SelectPerfil from './pages/SelectPerfil';
 function Routes() {
   return (
     <BrowserRouter>
-      <Route path="/" exact component={Login}/>
-      <Route path="/select-perfil" component={SelectPerfil}/>
+      <Route path="/" exact component={SelectPerfil}/>
+      <Route path="/login" exact component={Login}/>
       <Route path="/buddy" component={BuddyForm}/>
       <Route path="/user" component={UserForm}/>
     </BrowserRouter>
