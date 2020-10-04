@@ -1,7 +1,7 @@
 :root {
   font-size: 85%;
 
-  --color-background: #CECECE;
+  background-image: url(../../assets/img/friends.jpg);
   --color-primary-light: #FFD700;
   --color-primary-dark: #FFC600;
   --color-secundary: #E0E0E0;
