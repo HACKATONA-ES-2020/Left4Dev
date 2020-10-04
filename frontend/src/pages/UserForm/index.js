@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TextField } from '@material-ui/core';
+import { TextField, Typography } from '@material-ui/core';
 
 import PageHeader from '../../components/PageHeader';
 import Background from '../../components/Background';
@@ -18,14 +18,16 @@ import SentimentDissatisfiedSharpIcon from '@material-ui/icons/SentimentDissatis
 import SentimentSatisfiedSharpIcon from '@material-ui/icons/SentimentSatisfiedSharp';
 import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
 import './styles.css';
+import api from '../../services/api'
 
 function UserForm() {
   const [values, setValues] = React.useState({
     showPassword: false,
-    username: '',
-    phone: '',
-    presentation: '',
-    emotion: ''
+    name: '',
+    password: '',
+    letter: '',
+    whatsapp: '',
+    scale: ''
   });
 
   const handleChange = (prop) => (event) => {
@@ -33,8 +35,8 @@ function UserForm() {
     setValues({ ...values, [prop]: event.target.value });
   };
 
-  const handleClickChangeEmotion = (emotion) => {
-    setValues({ emotion });
+  const handleClickChangeEmotion = (scale) => {
+    setValues({ scale });
   }
 
   const handleClickShowPassword = () => {
@@ -46,6 +48,11 @@ function UserForm() {
   };
 
   const cadastrar = () => {
+    delete values.showPassword;
+    api.post('/user', values)
+    .then(function(response){
+    console.log('salvo com sucesso')
+    });  
     console.log(values)
   }
 
@@ -56,19 +63,19 @@ function UserForm() {
         <Background>
           <main>
             <div className="title">
-              <span>INFORMAÇÕES PARA CADASTRO</span>
+            <Typography variant="h3" color="primary">Insira alguns dados para começar</Typography>
             </div>
             <form className="content" noValidate autoComplete="off">
               <div className="informacoes-basicas">
                 <TextField
-                  id="username"
-                  label="Nome de Usuário / Apelido"
+                  id="name"
+                  label="Nome de Usuário / Apelido *"
                   variant="outlined"
                   className="field"
-                  onChange={handleChange('username')}
+                  onChange={handleChange('name')}
                 />
                 <FormControl className="field" variant="outlined">
-                  <InputLabel htmlFor="password">Password</InputLabel>
+                  <InputLabel htmlFor="password">Senha *</InputLabel>
                   <OutlinedInput
                     id="password"
                     type={values.showPassword ? 'text' : 'password'}
@@ -101,12 +108,13 @@ function UserForm() {
                     <SentimentSatisfiedSharpIcon id="smile" fontSize="large" />
                   </div>
                 </FormControl>
+                <Typography variant="h6" color="primary">Caso queria, também coloque seu WhatsApp ou E-mail</Typography>
                 <TextField
-                  id="phone-number"
+                  id="whatsapp"
                   label="Whatsapp"
                   variant="outlined"
                   className="field"
-                  onChange={handleChange('phone')}
+                  onChange={handleChange('whatsapp')}
                 />
                 <TextField
                   id="email"
@@ -118,13 +126,13 @@ function UserForm() {
               </div>
               <div className="carta-apresentacao">
                 <TextField
-                  id="carta-apresentacao"
+                  id="letter"
                   label="Carta de Apresentação"
                   multiline
                   variant="outlined"
                   className="textarea"
                   rows={10}
-                  onChange={handleChange('presentation')}
+                  onChange={handleChange('letter')}
                 />
               </div>
             </form>

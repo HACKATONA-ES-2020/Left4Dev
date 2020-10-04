@@ -16,6 +16,7 @@ public class User {
     private String password;
     private String letter;
     private String whatsApp;
+    private String email;
     private int scale;
     private boolean avaliable = true;
 
