@@ -5,6 +5,8 @@ import hacka.service.BuddyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/buddy")
 public class BuddyController {
@@ -15,8 +17,25 @@ public class BuddyController {
     @PostMapping
     public Buddy postBuddy(
             @RequestBody Buddy buddy
-    ) {
+    ) throws Exception {
         return buddyService.createBuddy(buddy);
+    }
+
+    @GetMapping
+    public List<Buddy> listBuddies() {
+        return buddyService.getValidatesBuddies();
+    }
+
+    @GetMapping("/not-valids")
+    public List<Buddy> listWaitingBuddies() {
+        return buddyService.getNotValidateBuddies();
+    }
+
+    @GetMapping
+    public Buddy getBuddy(
+            @RequestParam String id
+    ) {
+        return buddyService.getById(id);
     }
 
     @PutMapping

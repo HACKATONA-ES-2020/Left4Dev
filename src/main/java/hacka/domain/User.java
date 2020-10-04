@@ -17,6 +17,6 @@ public class User {
     private String letter;
     private String whatsApp;
     private int scale;
-    private boolean flag;
+    private boolean avaliable = true;
 
 }

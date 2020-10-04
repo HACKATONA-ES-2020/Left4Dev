@@ -18,13 +18,26 @@ public class UserController {
     @PostMapping
     public User postBuddy(
             @RequestBody User user
-    ) {
+    ) throws Exception {
         return userService.createUser(user);
     }
 
     @GetMapping
     public List<User> getAllUsers() {
         return userService.getAllUsers();
+    }
+
+    @GetMapping
+    public boolean login(
+            @RequestParam String name,
+            @RequestParam String password
+    ) {
+        return userService.validateLogin(name, password);
+    }
+
+    @GetMapping("/avaliable")
+    public List<User> getAvaliableUsers() {
+        return userService.getAvaliableUsers();
     }
 
     @PutMapping

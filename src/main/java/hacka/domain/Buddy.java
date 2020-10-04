@@ -2,10 +2,9 @@ package hacka.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.io.FileInputStream;
 
 @Data
 @Document(collection = "buddy")
@@ -16,9 +15,9 @@ public class Buddy {
     private String id;
     private String name;
     private String area;
-    //private FileInputStream cv;
+    //private FileSystemResource cv;
     private String password;
     private boolean flag;
-    private boolean isValid;
+    private boolean isValid = false;
 
 }

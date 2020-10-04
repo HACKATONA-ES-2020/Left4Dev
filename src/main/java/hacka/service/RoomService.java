@@ -11,6 +11,7 @@ import java.util.List;
 public class RoomService {
 
     public Room createRoom(User user, Buddy buddy) {
+        user.setAvaliable(false);
         return new Room(buddy, user);
     }
 
