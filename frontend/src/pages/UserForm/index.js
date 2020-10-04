@@ -101,17 +101,17 @@ function UserForm() {
                   label="Email"
                   variant="outlined"
                   className="field"
-                />
+                /> 
               </div>
               <div className="carta-apresentacao">
-                 <TextField
-                    id="carta-apresentacao"
-                    label="Carta de Apresentação"
-                    multiline
-                    variant="outlined"
-                    className="textarea"
-                    rows={20}
-                  />
+                <TextField
+                  id="carta-apresentacao"
+                  label="Carta de Apresentação"
+                  multiline
+                  variant="outlined"
+                  className="textarea"
+                  rows={20}
+                />
               </div>
             </form>
             <div className="form-button">
@@ -119,9 +119,9 @@ function UserForm() {
                 CADASTRAR
               </Button>
             </div>
-            <div class="form-link">
+            <div className="form-link">
                 <p>Já possui conta?</p>
-                <a href="/signin">Entrar</a>
+                <a href="/user">Entrar</a>
             </div>
           </main>
         </Background>
