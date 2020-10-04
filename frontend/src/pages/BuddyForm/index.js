@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 import { TextField} from '@material-ui/core';
 
@@ -13,7 +14,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import './styles.css';
+import './stylesBuddy.css';
 
 function BuddyForm() {
   const [values, setValues] = React.useState({
@@ -22,9 +23,10 @@ function BuddyForm() {
     weight: '',
     weightRange: '',
     showPassword: false,
+    userName: ''
   });
 
-  // const [selectedFile, setSelectedFile] = 
+  const [selectedFile, setSelectedFile] = React.useState(null);
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
@@ -34,28 +36,45 @@ function BuddyForm() {
     setValues({ ...values, showPassword: !values.showPassword });
   };
 
-  const handleMouseDownPassword = (event) => {
+  const handleMouseDownPassword = (event) => {  
     event.preventDefault();
   };
+
+  const onFileChange = event => { 
+    setSelectedFile({ selectedFile: event.target.files[0] }); 
+  };
+
+  const onFileUpload = () => { 
+    const formData = new FormData(); 
+
+    formData.append( 
+      "myFile", 
+      this.state.selectedFile, 
+      this.state.selectedFile.name 
+    );
+     
+    axios.post("api/uploadfile", formData); 
+  }; 
 
   return (
     <React.Fragment>
       <PageHeader />
-      <div className="form-container">
+      <div className="form-containerB">
         <Background>
           <main>
-            <div className="title">
+            <div className="titleB">
               <span>INFORMAÇÕES PARA CADASTRO</span>
             </div>
-            <form className="content" noValidate autoComplete="off">
-              <div className="informacoes-basicas">
+            <form className="contentB" noValidate autoComplete="off">
+              <div className="informacoes-basicasB">
                 <TextField
                   id="username"
                   label="Nome de Usuário / Apelido"
                   variant="outlined"
-                  className="field"
+                  className="fieldB"
+                  onChange={handleChange('username')}
                 />
-                <FormControl className="field" variant="outlined">
+                <FormControl className="fieldB" variant="outlined">
                   <InputLabel htmlFor="password">Password</InputLabel>
                   <OutlinedInput
                     id="password"
@@ -78,14 +97,16 @@ function BuddyForm() {
                   />
                 </FormControl>
               </div>
-              
+              <div className="fieldB uploadB"> 
+                <input type="file" onChange={onFileChange} /> 
+              </div> 
             </form>
-            <div className="form-button">
-              <Button variant="contained" size="medium" className="button">
+            <div className="form-buttonB">
+              <Button variant="contained" size="medium" className="buttonB" onClick={onFileUpload}>
                 CADASTRAR
               </Button>
             </div>
-            <div className="form-link">
+            <div className="form-linkB">
               <p>Já possui conta?</p>
               <a href="/buddy">Entrar</a>
             </div>
