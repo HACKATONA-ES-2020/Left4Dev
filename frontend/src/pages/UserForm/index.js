@@ -8,6 +8,7 @@ import Background from '../../components/Background';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
 import FilledInput from '@material-ui/core/FilledInput';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
@@ -18,7 +19,9 @@ import FormControl from '@material-ui/core/FormControl';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import MaskedInput from 'react-text-mask';
-
+import SentimentDissatisfiedSharpIcon from '@material-ui/icons/SentimentDissatisfiedSharp';
+import SentimentSatisfiedSharpIcon from '@material-ui/icons/SentimentSatisfiedSharp';
+import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
 import './styles.css';
 
 function UserForm() {
@@ -42,26 +45,9 @@ function UserForm() {
     event.preventDefault();
   };
 
-  // const textMaskCustom = (props) => {
-  //   const { inputRef, ...other } = props;
-  
-  //   return (
-  //     <MaskedInput
-  //       {...other}
-  //       ref={(ref) => {
-  //         inputRef(ref ? ref.inputElement : null);
-  //       }}
-  //       mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
-  //       placeholderChar={'\u2000'}
-  //       showMask
-  //     />
-  //   );
-  // }
-  
   return (
     <React.Fragment>
       <PageHeader />
-      {/* <Container className="container-form"> */}
       <div className="form-container">
         <Background>
           <main>
@@ -98,14 +84,18 @@ function UserForm() {
                     labelWidth={70}
                   />
                 </FormControl>
-
+                <InputLabel className="field">Escala emocional</InputLabel>
+                <FormControl className="icons">
+                  <SentimentDissatisfiedSharpIcon id="sad" className="field" fontSize="large" />
+                  <SentimentDissatisfiedIcon id="neutral" className="field" fontSize="large" />
+                  <SentimentSatisfiedSharpIcon id="smile" className="field" fontSize="large" />
+                </FormControl>
                 <TextField
                   id="phone-number"
                   label="Whatsapp"
                   variant="outlined"
                   className="field"
                 />
-
                 <TextField
                   id="email"
                   label="Email"
@@ -123,67 +113,19 @@ function UserForm() {
                     rows={20}
                   />
               </div>
-
             </form>
-              {/* <form action="">
-                  <fieldset>
-                    <label>
-                      Nome de Usuário / Apelido
-                      <input type="text" name="name" />
-                    </label>
-                  </fieldset>
-
-                    <fieldset>
-                      <label>
-                        Senha
-                        <input type="password" name="password" />
-                      </label>
-                    </fieldset>
-
-                    <fieldset>
-                      <label htmlFor="">
-                        <input type="radio"  name="emoji" value="0" />
-                        Sad
-                      </label>
-
-                      <label htmlFor="">
-                        <input type="radio"  name="emoji" value="0" />
-                        Indifferent
-                      </label>
-
-                      <label htmlFor="">
-                        <input type="radio"  name="emoji" value="0" />
-                        Happy
-                      </label>
-                    </fieldset>
-
-                    <fieldset>
-                      <label for="phone">
-                      Whatsapp
-                        <input type="tel" id="phone" name="phone" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" />
-                      </label>
-                    </fieldset>
-                  
-                  <fieldset>
-                    <label>
-                      Carta de Apresentação
-                      <textarea>
-                        Texto
-                      </textarea>
-                    </label>
-                  </fieldset>
-
-                <footer>
-                  <button type="submit">
-                    Salvar
-                  </button>
-                </footer>
-
-              </form> */}
+            <div className="form-button">
+              <Button variant="contained" size="medium" className="button">
+                CADASTRAR
+              </Button>
+            </div>
+            <div class="form-link">
+                <p>Já possui conta?</p>
+                <a href="/signin">Entrar</a>
+            </div>
           </main>
         </Background>
       </div>
-      {/* </Container> */}
     </React.Fragment>
   );
 }
