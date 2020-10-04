@@ -51,19 +51,19 @@ function UserForm() {
         <Background>
           <main>
             <div className="title">
-              <span>INFORMAÇÕES PARA CADASTRO</span>
+              <span>Insera alguns dados para começar</span>
             </div>
             <form className="content" noValidate autoComplete="off">
               <div className="informacoes-basicas">
                 <TextField
                   id="username"
-                  label="Nome de Usuário / Apelido"
+                  label="Nome de Usuário / Apelido *"
                   variant="outlined"
                   className="field"
                   onChange={handleChange('username')}
                 />
                 <FormControl className="field" variant="outlined">
-                  <InputLabel htmlFor="password">Password</InputLabel>
+                  <InputLabel htmlFor="password">Senha *</InputLabel>
                   <OutlinedInput
                     id="password"
                     type={values.showPassword ? 'text' : 'password'}
