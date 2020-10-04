@@ -31,9 +31,14 @@ function UserForm() {
     weight: '',
     weightRange: '',
     showPassword: false,
+    username: '',
+    phone: '',
+    presentation: '',
+    emotion: ''
   });
 
   const handleChange = (prop) => (event) => {
+    console.log(event.target.value)
     setValues({ ...values, [prop]: event.target.value });
   };
 
@@ -61,6 +66,7 @@ function UserForm() {
                   label="Nome de Usuário / Apelido"
                   variant="outlined"
                   className="field"
+                  onChange={handleChange('username')}
                 />
                 <FormControl className="field" variant="outlined">
                   <InputLabel htmlFor="password">Password</InputLabel>
@@ -86,21 +92,23 @@ function UserForm() {
                 </FormControl>
                 <InputLabel className="field">Escala emocional</InputLabel>
                 <FormControl className="icons">
-                  <SentimentDissatisfiedSharpIcon id="sad" className="field" fontSize="large" />
-                  <SentimentDissatisfiedIcon id="neutral" className="field" fontSize="large" />
-                  <SentimentSatisfiedSharpIcon id="smile" className="field" fontSize="large" />
+                  {/* <SentimentDissatisfiedSharpIcon id="sad" className="field" fontSize="large" value={handleChange('emotion')}/> */}
+                  {/* <SentimentDissatisfiedIcon id="neutral" className="field" fontSize="large" value={handleChange('emotion')}/> */}
+                  {/* <SentimentSatisfiedSharpIcon id="smile" className="field" fontSize="large" value={handleChange('emotion')}/> */}
                 </FormControl>
                 <TextField
                   id="phone-number"
                   label="Whatsapp"
                   variant="outlined"
                   className="field"
+                  onChange={handleChange('phone')}
                 />
                 <TextField
                   id="email"
                   label="Email"
                   variant="outlined"
                   className="field"
+                  onChange={handleChange('email')}
                 /> 
               </div>
               <div className="carta-apresentacao">
@@ -111,6 +119,7 @@ function UserForm() {
                   variant="outlined"
                   className="textarea"
                   rows={20}
+                  onChange={handleChange('presentation')}
                 />
               </div>
             </form>

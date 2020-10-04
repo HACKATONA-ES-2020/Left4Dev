@@ -28,6 +28,7 @@ function BuddyForm() {
     weight: '',
     weightRange: '',
     showPassword: false,
+    userName: ''
   });
 
   const [selectedFile, setSelectedFile] = React.useState(null);
@@ -76,6 +77,7 @@ function BuddyForm() {
                   label="Nome de Usuário / Apelido"
                   variant="outlined"
                   className="fieldB"
+                  onChange={handleChange('username')}
                 />
                 <FormControl className="fieldB" variant="outlined">
                   <InputLabel htmlFor="password">Password</InputLabel>
