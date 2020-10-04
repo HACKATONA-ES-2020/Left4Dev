@@ -22,7 +22,7 @@ import MaskedInput from 'react-text-mask';
 import SentimentDissatisfiedSharpIcon from '@material-ui/icons/SentimentDissatisfiedSharp';
 import SentimentSatisfiedSharpIcon from '@material-ui/icons/SentimentSatisfiedSharp';
 import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
-import './styles.css';
+import './stylesUser.css';
 
 function UserForm() {
   const [values, setValues] = React.useState({
